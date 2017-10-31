@@ -1,0 +1,69 @@
+<div class="container" xmlns="">
+  <div class="row">
+    <div class="col s6">
+      <h3><i>Register Part</i></h3>
+
+      <form [formGroup]="registerForm" novalidate >
+        <div class="form-group">
+          <label class="center-block">Name:
+            <input class="form-control" formControlName="name" [(ngModel)]="rigisterName">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Password:
+            <input class="form-control" formControlName="password" type="password" [(ngModel)]="rigisterPassword">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Phone:
+            <input class="form-control" formControlName="phone" pattern = "\d{10}" placeholder="1234567890" [(ngModel)]="rigisterPhone">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Email:
+            <input class="form-control" formControlName="email" pattern="[a-zA-Z0-9]*@[a-zA-Z0-9.]*" placeholder="123@rice.edu" [(ngModel)]="rigisterEmail">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Birthday:
+            <input class="form-control" formControlName="birthday" pattern = "\d{4}-\d{2}-\d{2}" placeholder="1990-01-01" [(ngModel)]="rigisterBirthday">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block">Zipcode:
+            <input class="form-control" formControlName="zipcode" pattern="\d{5}" placeholder="77030" [(ngModel)]="rigisterZipcode">
+          </label>
+        </div>
+  <!--unless all required parts are filled and meet requirement, the sign up button is unavailable-->
+          <button type="submit" [disabled]="!registerForm.valid" class="btn btn-success" (click)="signUp()">
+            Sign Up
+          </button>
+      </form>
+    </div>
+
+    <div class="col s6">
+    <h3><i>Login Part</i></h3>
+      <form [formGroup]="userForm" novalidate >
+        <div class="form-group">
+          <label class="center-block " >Name:
+            <input [(ngModel)]="userName" class="form-control" formControlName="name" placeholder="tangmo" id="testname">
+          </label>
+        </div>
+        <div class="form-group">
+          <label class="center-block " >Password:
+            <input [(ngModel)]="userPassword" class="form-control" formControlName="password" placeholder="riceAndMe" id="testpwd">
+          </label>
+        </div>
+            <button type="submit" [disabled]="!userForm.valid" class="btn btn-success" id="testbutton" (click)="loginButton()">
+              <a routerLink="/main" routerLinkActive="active" *ngIf = canLogin>
+                Log in
+              </a>
+            </button>
+        <div *ngIf = rightInfo id="msgr">correct user and password !</div>
+        <div *ngIf = wrongInfo id="msg">incorrect user or password !</div>
+      </form>
+    </div>
+
+  </div>
+</div>
+

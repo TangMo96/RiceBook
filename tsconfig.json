@@ -16,4 +16,14 @@
       "dom"
     ]
   }
+//    "module": "commonjs",
+//    "noEmitHelpers": true
+//  },
+//  "exclude": ["node_modules"],
+//  "awesomeTypescriptLoaderOptions": {
+//    "forkChecker": true
+//  },
+//  "compileOnSave": false,
+//  "buildOnSave": false,
+//  "atom": { "rewriteTsconfig": false}
 }

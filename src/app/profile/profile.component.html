@@ -1,0 +1,86 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col s12 m4 l2">
+      <p><img src="assets/icon3.jpg" alt="cuihaosb" style="width: 70px">
+    </div>
+    <div class="col s12 m4 l2"></div>
+    <div class="col s12 m4 l2"></div>
+    <div class="col s12 m4 l2"></div>
+    <div class="col s12 m4 l2">
+      <input type='file' class="waves-effect waves-light btn" style="top:30px; width: 300px">
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <div class="card blue-grey darken-3">
+        <div class="card-content white-text">
+          <span class="card-title">Current Info</span>
+          <div>
+            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">N:</i></a>
+            <input  [(ngModel)] = "curName">
+          </div><br>
+          <div>
+            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">E:</i></a>
+            <input  [(ngModel)] = "curEmail">
+          </div><br>
+          <div>
+            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">P:</i></a>
+            <input  [(ngModel)] = "curPhone">
+          </div><br>
+          <div>
+            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">Z:</i></a>
+            <input  [(ngModel)] = "curZipcode">
+          </div><br>
+          <div>
+            <a class="btn btn-floating btn-large cyan pulse"><i class="material-icons">B:</i></a>
+            <input  [(ngModel)] = "curBirthday">
+          </div><br>
+        </div>
+      </div>
+      <a routerLink="/main" routerLinkActive="active">Main Page</a><br>
+      <a routerLink="/landing" routerLinkActive="active">Log Out</a>
+    </div>
+
+    <div class="col s6">
+      <div class="card blue-grey darken-3">
+        <div class="card-content white-text">
+          <span class="card-title">Update Info</span>
+          <form [formGroup]="infoForm" novalidate>
+            <div class="form-group">
+              <label class="center-block">Name:
+                <input class="form-control" formControlName="name" >
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="center-block">Email:
+                <input class="form-control" formControlName="email" type="email" >
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="center-block">Phone:
+                <input class="form-control" formControlName="phone" required minlength="4" >
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="center-block">Zip:
+                <input class="form-control" formControlName="zip" >
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="center-block">Password:
+                <input class="form-control" formControlName="password" >
+              </label>
+            </div>
+            <button (click)="click()" type="submit" [disabled]="!registerForm.valid" class="waves-effect waves-light btn">Update Info</button>
+          </form>
+          <div *ngIf = userExist>Isn't current user !</div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  </div>
+

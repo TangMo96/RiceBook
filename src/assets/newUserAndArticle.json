@@ -1,0 +1,8 @@
+{
+  "User":[
+    {"name": "Liangyu","img": "assets/icon1.jpg", "description": "I love swiming but I don't like wearing swiming underwear"},
+    {"name": "Migu", "img": "assets/icon5.jpg", "description": "I play CSgo Everyday"},
+    {"name": "Mo Xingyu","img": "assets/icon3.jpg",  "description": "I LOVE AI"}
+  ]
+
+}

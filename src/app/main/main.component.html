@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col s3"><br>
+       <div style="background-color: azure">
+         <a md-button [routerLink]="['/profile']">profile page</a><br>
+         <a md-button [routerLink]="['']">log out</a>
+         <p>{{this.currentUser}}</p>
+         <p><img src="assets/icon7.jpg" alt="cuihaosb" style="width: 70px">
+         <p>{{headlineDisplay}}</p>
+         <input [(ngModel)]="headline"><button (click)="updateHeadline()" >Update</button>
+       </div><br>
+      <div style="background-color: azure" class="card-content white-text">
+<!--following users part - acomplished with "let"-->
+        <div *ngFor="let follow of followingDisplay" style="background-color: cadetblue">
+          <p>{{follow.name}}</p>
+          <p><img src={{follow.img}} alt="cuihaosb" style="width: 70px"></p>
+          <p>{{follow.description}}</p>
+          <button (click)="unfollowing(follow.name)" style="background-color: darkolivegreen">unfollowing</button>
+        </div><br>
+        <input [(ngModel)]='addUser' class="black-text" placeholder="Liangyu/Migu/Mo Xingyu">
+        <button style="background-color: cadetblue" (click)="addFollowing()">Add</button>
+        <div class="card-content black-text">{{flag}}</div>
+      </div>
+
+    </div>
+
+    <div class="col s9">
+      <div class="col s12 m10" >
+        <div class="card blue-grey darken-1">
+          <div class="card-image">
+            <br><br><input type='file'  >
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <input [(ngModel)]="input" style="height: 70px" id="addInput">
+            </div>
+            <div class="card-action">
+              <button (click)="cancel()">Cancel</button>
+              <button (click)="onClick()" id="addButton">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class = "col s12 m10">
+        <input [(ngModel)]="search" placeholder="search.." id="searchInput">
+        <button (click)="searchFor()" id="searchButton">Search</button>
+      </div>
+<!--post parts-->
+      <div *ngFor="let post of postsDisplay">
+        <div class="col s12 m10">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{{post.name}}</span>
+              <p><img src="{{post.img}}" style="height: 100px"></p>
+              <p>{{post.time}}</p>
+              <p>{{post.context}}</p>
+            </div>
+            <div class="card-action">
+              <button>Edit</button>
+              <button>Comment</button>
+            </div>
+            <div class="card-content">
+              <div class="col s1"><button (click) = "showToUnshow(post.time)" ></button></div>
+              <div *ngIf = post.show class="col s11">
+                <div *ngFor="let curPost of post.userAndComment">
+
+                  <tr class="white-text">User: {{curPost.userCo}}</tr>
+                  <td class="white-text">Comment: {{curPost.comment}}</td>
+                </div>
+              </div>
+              <br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+  </div>

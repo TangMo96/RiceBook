@@ -1,0 +1,7 @@
+{
+  "userFollowing":[
+    {"name": "Cui Hao","img": "assets/icon3.jpg", "description": "I love swiming but I don't like wearing swiming underwear"},
+    {"name": "Liu Xing", "img": "assets/icon4.jpg", "description": "I play CSgo Everyday"},
+    {"name": "Pan Yang","img": "assets/icon6.jpg",  "description": "I LOVE AI"}
+  ]
+}

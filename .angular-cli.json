@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "my-app"
+    "name": "rice-book"
   },
   "apps": [
     {
@@ -55,6 +55,9 @@
   },
   "defaults": {
     "styleExt": "css",
+    "class": {
+      "spec": false
+    },
     "component": {}
   }
 }
